@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management System -git</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: #000;
+
+            color: #fff;
+        }
+
+
+        .login-box {
+            width: 350px;
+
+            padding: 35px;
+
+            background: #fff;
+
+            color: #000;
+
+            border: 1px solid #fff;
+
+            border-radius: 10px;
+
+            text-align: center;
+        }
+
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .subtitle {
+            margin-bottom: 30px;
+        }
+
+
+        .input-group {
+            text-align: left;
+
+            margin-bottom: 20px;
+        }
+
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+
+        input {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #000;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+        }
+
+
+        input:focus {
+            outline: 2px solid #000;
+        }
+
+
+        .login-btn {
+            width: 100%;
+
+            padding: 12px;
+
+            background: #000;
+
+            color: #fff;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .login-btn:hover {
+            opacity: 0.8;
+        }
+
+
+        #message {
+            margin-top: 15px;
+
+            font-weight: bold;
+        }
+
+
+        .footer {
+            margin-top: 25px;
+
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="login-box">
+
+
+        <h1>Login</h1>
+
+
+        <p class="subtitle">
+            Attendance Management System
+        </p>
+
+
+        <form id="loginForm">
+
+
+            <div class="input-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                Login
+            </button>
+
+
+        </form>
+
+
+        <p id="message"></p>
+
+
+        <p class="footer">
+            Attendance Record Management System
+        </p>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const message =
+            document.getElementById("message");
+
+
+
+        loginForm.addEventListener("submit", function(event) {
+
+
+            event.preventDefault();
+
+
+
+            const username =
+                document.getElementById("username").value;
+
+
+
+            const password =
+                document.getElementById("password").value;
+
+
+
+            if (
+                username === "admin" &&
+                password === "1234"
+            ) {
+
+
+                message.textContent =
+                    "Login successful!";
+
+
+
+                setTimeout(function() {
+
+
+                    window.location.href =
+                        "dashboard.html";
+
+
+                }, 800);
+
+
+            }
+
+
+            else {
+
+
+                message.textContent =
+                    "Invalid username or password.";
+
+
+            }
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
